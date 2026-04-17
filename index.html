@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <title>Alpine.js Study</title>
+
+    <link rel="stylesheet" href="/css/output.css">
+    <!-- <link rel="stylesheet" href="/css/build.css"> -->
+
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.15.11/dist/cdn.min.js"></script>
+  </head>
+  <body>
+
+    <main class="mx-auto max-w-7xl my-6">
+
+      <section class="flex flex-row gap-8" x-data="{ numCards: 1, cardHeader: 'Card header', btnColor: 'neutral'}">
+        <div class="w-1/2">
+          <div class="flex flex-row gap-4">
+            <div class="flex flex-col gap-3 p-4 border rounded-xl">
+              <img src="https://placehold.co/600x300">
+              <h2 class="text-2xl" x-text="cardHeader"></h2>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis 
+                nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+              </p>
+              <button class="py-2 px-4 cursor-pointer text-white transition duration-300" :class="`bg-${btnColor}-500 hover:bg-${btnColor}-700`">
+                This is a button
+              </button>
+            </div>
+            
+          </div>
+            
+        </div>
+        
+        <div class="w-1/2">
+          <div class="flex flex-col gap-4">
+            <div>
+              <h2 class="text-xl">Number of cards</h2>
+              <button class="w-6 bg-neutral-500 font-bold text-white cursor-pointer">-</button>
+              <button class="w-6 bg-neutral-500 font-bold text-white cursor-pointer">+</button>
+            </div>
+            <div>
+              <h2 class="text-xl">Set card header</h2>
+              <input type="text" placeholder="Enter header here" class="p-2 border">
+            </div>
+            <div>
+              <h2 class="text-xl">Button color</h2>
+              <div class="flex flex-row gap-2">
+                <button @click="btnColor = 'red'" class="rounded-full w-8 h-8 border-2 border-neutral-400 bg-red-500 cursor-pointer"></button>
+                <button class="rounded-full w-8 h-8 border-2 border-neutral-400 bg-green-500 cursor-pointer"></button>
+                <button class="rounded-full w-8 h-8 border-2 border-neutral-400 bg-blue-500 cursor-pointer"></button>
+                <button class="rounded-full w-8 h-8 border-2 border-neutral-400 bg-neutral-500 cursor-pointer"></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+    </main>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+  </body>
+</html>
